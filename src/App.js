@@ -39,20 +39,41 @@ function App() {
         </form>
 
       </div>
+      <div className="coin-container">
+      <div className="coin-row">
+            <div className="coin-data">
+              <th>Id</th>
+              <th>Name</th>
+              <th>Sym</th>
+              <th>Price</th>
+              <th>Volume</th>
+              <th>24Hr</th>
+              <th>MarketCap</th>
+            </div>
+          </div>
+
+      </div>
       {filteredCoins.map(coin => {
         return (
+    
+
+
           <Coin
-            key={coin.id}
-            name={coin.name}
-            price={coin.current_price}
-            symbol={coin.symbol}
-            marketcap={coin.total_volume}
-            volume={coin.market_cap}
-            image={coin.image}
-            priceChange={coin.price_change_percentage_24h}
+          key={coin.id}
+          name={coin.name}
+          price={coin.current_price}
+          symbol={coin.symbol}
+          marketcap={coin.total_volume}
+          volume={coin.market_cap}
+          image={coin.image}
+          rank={coin.market_cap_rank}
+          priceChange={coin.price_change_percentage_24h}
+          
           />
-        )
-      })}
+
+          )
+        })}
+
     </div>
   );
 }
